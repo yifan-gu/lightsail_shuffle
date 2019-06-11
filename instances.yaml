@@ -1,0 +1,9 @@
+- name: Ubuntu-512MB-Mumbai-1
+  region: ap-south-1
+- name: Ubuntu-512MB-Singapore-1
+  region: ap-southeast-1
+- name: Ubuntu-512MB-Tokyo-1
+  region: ap-northeast-1
+- name: Ubuntu-512MB-Oregon-1
+  region: us-west-2
+  
