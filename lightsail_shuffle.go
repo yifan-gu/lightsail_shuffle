@@ -91,6 +91,14 @@ func reattachIp(svc *lightsail.Lightsail, name string, staticIps map[string]stri
 	if err != nil {
 		return fmt.Errorf("failed to allocate ip %q for %v: %v", ipName, name, err)
 	}
+
+	gout, err := svc.GetInstance(&lightsail.GetInstanceInput{InstanceName: aws.String(name)})
+	if err != nil {
+		return fmt.Errorf("failed to get instance for %v: %v", name, err)
+	}
+
+	glog.Infof("New IP for %v is %q", name, *gout.Instance.PublicIpAddress)
+
 	return nil
 }
 
